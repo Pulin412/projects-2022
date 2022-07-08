@@ -1,0 +1,21 @@
+spring:
+  data:
+    cassandra:
+      keyspace-name: main
+      username: ${CASSANDRA_USERNAME}
+      password: ${CASSANDRA_PASSWORD}
+      schema-action: create-if-not-exists
+      request:
+        timeout: 10s
+      connection:
+        connect-timeout: 10s
+        init-query-timeout: 10s
+
+datastax.astra:
+  secure-connect-bundle: secure-connect.zip
+
+astra.db:
+  id: ${ASTRA_ID}
+  region: us-east1
+  keyspace: main
+  application.token: ${ASTRA_APPLICATION_TOKEN}
